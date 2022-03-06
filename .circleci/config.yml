@@ -9,6 +9,7 @@ jobs:
      - image: "cimg/base:stable"
     steps:
       - node/install
+          node-version: "16.13"
       - checkout
       - aws-cli/setup
       - aws-elastic-beanstalk/setup
@@ -22,7 +23,7 @@ jobs:
           command: |
            npm run api:install
       - run:
-          name: bild front 
+          name: build front 
           command: |
             npm run fe:build
       - run:
