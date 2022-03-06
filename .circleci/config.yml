@@ -16,35 +16,35 @@ jobs:
       - run:
           name: install front dep
           command: |
-          npm run fe:install
+           npm run fe:install
       - run:
           name: install backend dep
           command: |
-          npm run api:install
+           npm run api:install
       - run:
           name: bild front 
           command: |
-          npm run fe:build
+            npm run fe:build
       - run:
           name: build backend
           command: |
-          npm run api:build
+           npm run api:build
       - run:
           name: deploy front 
           command: |
-          npm run frontend:deploy
+           npm run frontend:deploy
       - run:
           name: install backend deploy
           command: |
-          npm run backend:deploy
+            npm run backend:deploy
       - run:
           name: install front deploy
           command: |
-          npm run frontend:deploy
+            npm run frontend:deploy
       - run:
           name: install front deploy
           command: |
-          npm run backend:deploy      
+           npm run backend:deploy      
 workflows:
     buildandeploy:
       jobs:
