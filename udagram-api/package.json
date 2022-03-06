@@ -13,7 +13,7 @@
     "build:windows": "npm run clean:windows && tsc && xcopy src\\config www\\config && copy  .npmrc www\\.npmrc && copy  package.json www\\package.json && cd www && 7z a Archive.zip && cd ..",
     "build": "npm run clean && tsc && cp -rf src/config www/config && cp .npmrc www/.npmrcopy  && cp package.json www/package.json && cd www && zip -r Archive.zip . && cd ..",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "deploy": "eb init udagram-api --platform node.js --region us-east-1 && eb use udagram-api-dev && eb deploy udagram-api-dev"
+    "deploy": "chmod +x ./bin/deploy.sh && ./bin/deploy.sh"
   },
   "keywords": [],
   "author": "Gabriel Ruttner",

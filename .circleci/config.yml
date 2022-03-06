@@ -39,13 +39,14 @@ jobs:
           command: |
             npm run backend:deploy
       - run:
-          name: install front deploy
+          name: install backend deploy
           command: |
-            npm run frontend:deploy
+           npm run backend:deploy 
       - run:
           name: install front deploy
           command: |
-           npm run backend:deploy      
+            npm run frontend:deploy
+           
 workflows:
     buildandeploy:
       jobs:
