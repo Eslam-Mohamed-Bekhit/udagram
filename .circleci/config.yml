@@ -15,7 +15,7 @@ jobs:
       - aws-elastic-beanstalk/setup
 
       - run:
-          name: install front dep
+          name: installs front dep
           command: |
            npm run fe:install
       - run:
