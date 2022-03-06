@@ -4,7 +4,7 @@
     "api:install": "cd udagram-api && npm ci && cd ..",
     "fe:build": "cd udagram-frontend && npm run build && cd ..",
     "fe:install": "cd udagram-frontend && npm ci && cd ..",
-    "backend:deploy": "cd udagram-api && aws use udagram-api-dev && eb depoly udagram-api-dev && cd ..",
+    "backend:deploy": "cd udagram-api && eb use udagram-api-dev && eb depoly udagram-api-dev && cd ..",
     "frontend:deploy":"cd udagram-frontend && aws s3 cp --recursive --acl public-read ./www s3://eslambekhit-udagram123/ && cd .."
   },
   "devDependencies": {},
