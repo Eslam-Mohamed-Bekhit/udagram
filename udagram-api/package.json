@@ -11,8 +11,9 @@
     "clean:windows": "rmdir /s /q www\\ || (exit 0)",
     "clean": "rm -rf www/ || true",
     "build:windows": "npm run clean:windows && tsc && xcopy src\\config www\\config && copy  .npmrc www\\.npmrc && copy  package.json www\\package.json && cd www && 7z a Archive.zip && cd ..",
-    "build": "npm run clean && tsc && cp -rf src/config www/config && cp .npmrc www/.npmrcopy c && cp package.json www/package.json && cd www && zip -r Archive.zip . && cd ..",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "npm run clean && tsc && cp -rf src/config www/config && cp .npmrc www/.npmrcopy  && cp package.json www/package.json && cd www && zip -r Archive.zip . && cd ..",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "deploy": "eb use udagram-api-dev && eb deploy udagram-api-dev"
   },
   "keywords": [],
   "author": "Gabriel Ruttner",
