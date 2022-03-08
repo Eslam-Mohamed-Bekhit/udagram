@@ -20,18 +20,17 @@ jobs:
       - run:
           name: installs front dep
           command: |
-           npm run fe:install
+           npm run fe:install    
+      - run:
+          name: install backend dep
+          command: |
+           npm run api:install
+     
       - save_cache:
           paths:
             - node_modules
           key: v1-dep-
-
-     
-      # - run:
-      #     name: install backend dep
-      #     command: |
-      #      npm run api:install
-      # - run:
+      #  - run:
       #     name: build front 
       #     command: |
       #       npm run fe:build
