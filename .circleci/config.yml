@@ -21,7 +21,7 @@ jobs:
             - v1-dep-{{ checksum "package.json"}}
             - v1-dep-
       - run:
-          name: installs front dep2
+          name: installs front dep
           command: |
            npm run fe:install
       - save_cache:
