@@ -15,8 +15,8 @@ jobs:
       - aws-elastic-beanstalk/setup
       - restore_cache:
           keys:
-            - v1-dep-{{ checksum "package.json"}}
-            - v1-dep-
+            - v2-dep-{{ checksum "package.json"}}
+            - v2-dep-
       - run:
           name: installs front dep
           command: |
@@ -29,7 +29,7 @@ jobs:
       - save_cache:
           paths:
             - node_modules
-          key: v1-dep-
+          key: v2-dep-
       #  - run:
       #     name: build front 
       #     command: |
