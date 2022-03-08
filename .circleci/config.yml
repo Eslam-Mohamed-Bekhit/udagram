@@ -13,7 +13,7 @@ jobs:
       - checkout
       - aws-cli/setup
       - aws-elastic-beanstalk/setup
-      - restore_cash:
+      - restore_cashe:
           keys:
             - v1-dep-{{ checksum "package.json"}}
             - v1-dep-
@@ -25,22 +25,22 @@ jobs:
           paths:
             - node_modules
           key: v1-dep-
-      - run:
-          name: install backend dep
-          command: |
-           npm run api:install
-      - run:
-          name: build front 
-          command: |
-            npm run fe:build
-      - run:
-          name: build backend
-          command: |
-           npm run api:build
-      - run:
-          name: deploy front 
-          command: |
-           npm run frontend:deploy
+      # - run:
+      #     name: install backend dep
+      #     command: |
+      #      npm run api:install
+      # - run:
+      #     name: build front 
+      #     command: |
+      #       npm run fe:build
+      # - run:
+      #     name: build backend
+      #     command: |
+      #      npm run api:build
+      # - run:
+      #     name: deploy front 
+      #     command: |
+      #      npm run frontend:deploy
       # - run:
       #     name: install backend deploy
       #     command: |
