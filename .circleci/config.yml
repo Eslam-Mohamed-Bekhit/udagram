@@ -13,9 +13,6 @@ jobs:
       - checkout
       - aws-cli/setup
       - aws-elastic-beanstalk/setup
-      
-      - checkout
-
       - restore_cache:
           keys:
             - v1-dep-{{ checksum "package.json"}}
