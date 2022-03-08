@@ -30,22 +30,22 @@ jobs:
           paths:
             - node_modules
           key: v2-dep-
-      #  - run:
-      #     name: build front 
-      #     command: |
-      #       npm run fe:build
-      # - run:
-      #     name: build backend
-      #     command: |
-      #      npm run api:build
+      - run:
+          name: build front 
+          command: |
+            npm run fe:build
+      - run:
+          name: build backend
+          command: |
+           npm run api:build
       # - run:
       #     name: deploy front 
       #     command: |
       #      npm run frontend:deploy
-      # - run:
-      #     name: install backend deploy
-      #     command: |
-      #       npm run backend:deploy
+      - run:
+          name:  backend deploy
+          command: |
+            npm run backend:deploy
       # - run:
       #     name: install backend deploy
       #     command: |
