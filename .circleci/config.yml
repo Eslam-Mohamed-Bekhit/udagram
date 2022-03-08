@@ -22,7 +22,7 @@ jobs:
           command: |
            npm run fe:install    
       - run:
-          name: install backend dep
+          name: install backend de
           command: |
            npm run api:install
      
