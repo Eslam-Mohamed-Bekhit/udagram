@@ -13,6 +13,7 @@ jobs:
       - checkout
       - aws-cli/setup
       - aws-elastic-beanstalk/setup
+      
       - checkout
 
       - restore_cache:
@@ -27,6 +28,20 @@ jobs:
           paths:
             - node_modules
           key: v1-dep-
+      - checkout
+
+      - restore_cache:
+          keys:
+            - v2-dep-{{ checksum "package.json"}}
+            - v2-dep-
+      - run:
+          name: installs be dep
+          command: |
+           npm run api:install
+      - save_cache:
+          paths:
+            - node_modules
+          key: v2-dep-
       # - run:
       #     name: install backend dep
       #     command: |
