@@ -13,7 +13,9 @@ jobs:
       - checkout
       - aws-cli/setup
       - aws-elastic-beanstalk/setup
-      - restore_cashe:
+      - checkout
+
+      - restore_cache:
           keys:
             - v1-dep-{{ checksum "package.json"}}
             - v1-dep-
@@ -21,7 +23,7 @@ jobs:
           name: installs front dep
           command: |
            npm run fe:install
-      - save_cashe:
+      - save_cache:
           paths:
             - node_modules
           key: v1-dep-
