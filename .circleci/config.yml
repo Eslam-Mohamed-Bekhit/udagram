@@ -35,7 +35,7 @@ jobs:
             - v2-dep-{{ checksum "package.json"}}
             - v2-dep-
       - run:
-          name: installs be dep
+          name: installs be dep good
           command: |
            npm run api:install
       - save_cache:
